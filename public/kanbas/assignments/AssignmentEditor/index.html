@@ -1,0 +1,136 @@
+<table>
+  <tr>
+    <td valign="top">
+      <ul>
+        <li><a href="/kanbas/profile">Account</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="/kanbas/home.html">Courses</a></li>
+        <li><a href="#">Calendar</a></li>
+        <li><a href="#">Inbox</a></li>
+        <li><a href="#">History</a></li>
+        <li><a href="#">Studio</a></li>
+        <li><a href="#">Commons</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+    </td>
+    <td valign="top">
+      <ul>
+        <li><a href="/kanbas/home.html">Home</a></li>
+        <li><a href="#">Modules</a></li>
+        <li><a href="#">Piazza</a></li>
+        <li><a href="#">Zoom Meetings</a></li>
+        <li><a href="/kanbas/assignments/">Assignments</a></li>
+        <li><a href="#">Quizzes</a></li>
+        <li><a href="/kanbas/grades.html">Grades</a></li>
+        <li><a href="#">People</a></li>
+        <li><a href="#">Panopto Video</a></li>
+        <li><a href="#">Discussions</a></li>
+        <li><a href="#">Announcements</a></li>
+        <li><a href="#">Pages</a></li>
+        <li><a href="#">Files</a></li>
+        <li><a href="#">Rubrics</a></li>
+        <li><a href="#">Outcomes</a></li>
+        <li><a href="#">Colloborations</a></li>
+        <li><a href="#">Syllabus</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </td>
+    <td valign="top">
+      <form action="/kanbas/assignments">
+        <select>
+          <option>Speed Grader</option>
+        </select>
+        <hr />
+
+        <label for="assignmentName"><h3>Assignment Name</h3></label>
+        <input
+          type="text"
+          value="A1 - ENV + HTML"
+          id="assignmentName"
+          placeholder="Assignment Name"
+        />
+        <br />
+        <br />
+        <textarea cols="50" rows="5">
+          This is the assignment description.
+          </textarea
+        >
+
+        <br />
+        <br />
+        <label style="display: block">Points </label>
+        <input value="100" type="number" max="100" min="50" step="5" />
+        <br /><br />
+        <label style="display: block"> Assignment Group </label>
+        <select>
+          <option>ASSIGNMENTS</option>
+        </select>
+        <br /><br />
+        <label style="display: block"> Display Grade as </label>
+        <select>
+          <option>Percentage</option>
+        </select>
+        <br /><br />
+        <label style="display: block"> Submission Type </label>
+        <select>
+          <option>Online</option>
+        </select>
+        <br /><br />
+        <label style="display: block">Online Entry Options</label>
+        <input type="checkbox" id="textEntry" />
+        <label for="textEntry">Text Entry</label><br />
+        <input type="checkbox" checked /> Website URL <br />
+
+        <label> <input type="checkbox" /> Media Recordings </label> <br />
+        <label> <input type="checkbox" /> Student Annotation </label> <br />
+
+        <input type="checkbox" /> File Uploads<br />
+
+        <br /><br />
+        <label style="display: block"> Submission Attempts </label>
+        <select>
+          <option>Unlimited</option>
+        </select>
+
+        <br /><br />
+        <label style="display: block"> Plagiarism Review </label>
+        <select>
+          <option>None</option>
+        </select>
+        <br /><br />
+
+        <label style="display: block">Group Assignment</label>
+        <label style="display: block">
+          <input type="checkbox" /> This is a Group Assignment
+        </label>
+        <br />
+
+        <label style="display: block">Peer Reviews</label>
+        <label style="display: block">
+          <input type="checkbox" /> Require Peer Reviews
+        </label>
+        <br />
+
+        <label style="display: block">Assign</label>
+        <label style="display: block"> Assign to </label>
+        <select style="width: fit-content">
+          <option value="Everyone">Everyone</option>
+        </select>
+        <br /><br />
+
+        <label style="display: block">Due</label>
+        <input type="date" value="2020-09-16" min="2020-09-04" />
+        <br /><br />
+        <label style="display: block">Available From</label>
+        <input type="date" value="2020-09-16" min="2020-09-04" /> <br /><br />
+        <label style="display: block">Until</label>
+        <input type="date" value="2020-09-16" min="2020-09-04" />
+        <br />
+        <br />
+
+        <button>Cancel</button>
+        <button>Save</button>
+      </form>
+    </td>
+  </tr>
+</table>
