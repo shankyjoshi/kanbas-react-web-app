@@ -1,0 +1,35 @@
+.fared {
+  color: red;
+  font-size: 1.5em;
+}
+
+.selected {
+  color: black;
+  border-style: solid;
+  border-left: 1px;
+}
+
+.container-fluid {
+  height: 100%;
+  align-items: stretch;
+}
+
+a:hover {
+  text-decoration: underline !important;
+}
+
+div.col-auto a {
+  text-decoration: none !important;
+}
+
+div.offcanvas a {
+  text-decoration: none !important;
+}
+
+.card a {
+  text-decoration: none !important;
+}
+
+.card a:hover {
+  text-decoration: underline !important;
+}

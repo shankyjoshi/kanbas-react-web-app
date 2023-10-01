@@ -3,175 +3,735 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Assignment</title>
+
+    <link href="../../vendors/fontawesome/css/all.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../../index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assignment.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <table>
-      <tr>
-        <td valign="top">
-          <ul>
-            <li><a href="/kanbas/profile/">Account</a></li>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="/kanbas/home.html">Courses</a></li>
-            <li><a href="#">Calendar</a></li>
-            <li><a href="#">Inbox</a></li>
-            <li><a href="#">History</a></li>
-            <li><a href="#">Studio</a></li>
-            <li><a href="#">Commons</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-        </td>
-        <td valign="top">
-          <ul>
-            <li><a href="/kanbas/home.html">Home</a></li>
-            <li><a href="#">Modules</a></li>
-            <li><a href="#">Piazza</a></li>
-            <li><a href="#">Zoom Meetings</a></li>
-            <li><a href="/kanbas/assignments/">Assignments</a></li>
-            <li><a href="#">Quizzes</a></li>
-            <li><a href="/kanbas/grades.html">Grades</a></li>
-            <li><a href="#">People</a></li>
-            <li><a href="#">Panopto Video</a></li>
-            <li><a href="#">Discussions</a></li>
-            <li><a href="#">Announcements</a></li>
-            <li><a href="#">Pages</a></li>
-            <li><a href="#">Files</a></li>
-            <li><a href="#">Rubrics</a></li>
-            <li><a href="#">Outcomes</a></li>
-            <li><a href="#">Colloborations</a></li>
-            <li><a href="#">Syllabus</a></li>
-            <li><a href="/kanbas/Course/CourseDetails.html">Settings</a></li>
-          </ul>
-        </td>
-        <td>
-          <input type="text" placeholder="Search for Assignments" />
-          <button>Group</button>
-          <button>Assignment</button>
-          <select>
-            <option>Edit Assignment Dates</option>
-          </select>
+    <div class="container-fluid g-0">
+      <div class="d-flex flex-row" style="height: 100%">
+        <div class="col-auto bg-dark d-none d-md-block">
+          <div class="list-group list-group-flush">
+            <a
+              class="list-group-item list-group-item-action bg-dark text-white"
+              href="/kanbas/profile/index.html"
+              ><div class="text-center">
+                <i class="far fa-user-circle d-block fa-2x"> </i>Account
+              </div>
+            </a>
 
+            <a
+              class="list-group-item list-group-item-action bg-dark text-white"
+              href="/kanbas/dashboard/dashboard.html"
+              ><div class="text-center">
+                <i class="fas fa-tachometer-alt d-block fared"></i>Dashboard
+              </div></a
+            >
+            <a
+              class="list-group-item list-group-item-action bg-white text-danger"
+              href="/kanbas/home.html"
+              ><div class="text-center">
+                <i class="fa fa-book d-block fared"></i>Courses
+              </div></a
+            >
+            <a
+              class="list-group-item list-group-item-action bg-dark text-white"
+              href="#"
+              ><div class="text-center">
+                <i class="fa fa-calendar-alt d-block fared"></i>Calendar
+              </div></a
+            >
+            <a
+              class="list-group-item list-group-item-action bg-dark text-white"
+              href="#"
+              ><div class="text-center">
+                <i class="fa fa-envelope-open-text d-block fared"></i>Inbox
+              </div></a
+            >
+            <a
+              class="list-group-item list-group-item-action bg-dark text-white"
+              href="#"
+              ><div class="text-center">
+                <i class="fa fa-history d-block fared"></i>History
+              </div></a
+            >
+            <a
+              class="list-group-item list-group-item-action bg-dark text-white"
+              href="#"
+              ><div class="text-center">
+                <i class="fa fa-tv d-block fared"></i>Studio
+              </div></a
+            >
+            <a
+              class="list-group-item list-group-item-action bg-dark text-white"
+              href="#"
+              ><div class="text-center">
+                <i class="fa fa-sign-out-alt d-block fared"></i>Commons
+              </div></a
+            >
+            <a
+              class="list-group-item list-group-item-action bg-dark text-white"
+              href="#"
+              ><div class="text-center">
+                <i class="fa fa-question-circle d-block fared"></i>Help
+              </div></a
+            >
+          </div>
+        </div>
+
+        <div class="d-flex flex-fill flex-column p-3">
+          <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+            <ol class="breadcrumb m-0">
+              <li class="breadcrumb-item text-danger">
+                <i class="fa fa-bars me-2" aria-hidden="true"></i>
+                <span class="fw-semibold">CS5610.11550.202410</span>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Assignments
+              </li>
+            </ol>
+          </nav>
           <hr />
-          <h1 style="display: inline">ASSIGNMENTS 40% of Total</h1>
 
-          <select>
-            <option>Edit</option>
-            <option>Speed Grader</option>
-            <option>Duplicate</option>
-            <option>Delete</option>
-            <option>Move To..</option>
-            <option>Send To..</option>
-            <option>Copy To..</option>
-            <option>Share To Commons</option>
-          </select>
-          <ul>
-            <li>
-              <a href="AssignmentEditor/" style="display: block"
-                >A1 - ENV + HTML</a
-              >
-              <a href="">Multiple Modules</a> | Not available yet
-            </li>
+          <div class="d-flex">
+            <div class="d-none d-md-block">
+              <ul class="list-group list-group-flush">
+                <a
+                  class="list-group-item text-danger border-0 fw-semibold"
+                  href="/kanbas/home.html"
+                  >Home</a
+                >
+                <a
+                  class="list-group-item text-danger border-0 fw-semibold"
+                  href="#"
+                  >Modules</a
+                >
+                <a
+                  class="list-group-item text-danger border-0 fw-semibold"
+                  href="#"
+                  >Piazza</a
+                >
+                <a
+                  class="list-group-item text-danger border-0 fw-semibold"
+                  href="#"
+                  >Zoom Meetings</a
+                >
+                <a
+                  class="list-group-item border-0 text-dark border-start border-dark border-3 fw-semibold"
+                  href="/kanbas/assignments/"
+                  >Assignments</a
+                >
+                <a
+                  class="list-group-item text-danger border-0 fw-semibold"
+                  href="#"
+                  >Quizzes</a
+                >
+                <a
+                  class="list-group-item text-danger border-0 fw-semibold"
+                  href="/kanbas/grades.html"
+                  >Grades</a
+                >
+                <a
+                  class="list-group-item text-danger border-0 fw-semibold"
+                  href="#"
+                  >People</a
+                >
+                <a
+                  class="list-group-item text-danger border-0 fw-semibold"
+                  href="#"
+                  >Panopto Video</a
+                >
+                <a
+                  class="list-group-item text-danger border-0 fw-semibold"
+                  href="#"
+                  >Discussions</a
+                >
+                <a
+                  class="list-group-item text-danger border-0 fw-semibold"
+                  href="#"
+                  >Announcements</a
+                >
+                <a
+                  class="list-group-item text-danger border-0 fw-semibold"
+                  href="#"
+                  >Pages</a
+                >
+                <a
+                  class="list-group-item text-danger border-0 fw-semibold"
+                  href="#"
+                  >Files</a
+                >
+                <a
+                  class="list-group-item text-danger border-0 fw-semibold"
+                  href="#"
+                  >Rubrics</a
+                >
+                <a
+                  class="list-group-item text-danger border-0 fw-semibold"
+                  href="#"
+                  >Outcomes</a
+                >
+                <a
+                  class="list-group-item text-danger border-0 fw-semibold"
+                  href="#"
+                  >Colloborations</a
+                >
+                <a
+                  class="list-group-item text-danger border-0 fw-semibold"
+                  href="#"
+                  >Syllabus</a
+                >
+                <a
+                  class="list-group-item text-danger border-0 fw-semibold"
+                  href="/kanbas/Course/CourseDetails.html"
+                  >Settings</a
+                >
+              </ul>
+            </div>
+            <div class="flex-fill">
+              <div class="d-inline-flex">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search For Assignment"
+                  aria-label="Search For Assignment"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+              <div class="d-flex flex-row gap-1 float-end">
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-secondary border border-3"
+                  >
+                    <i class="fa fa-plus pe-1" aria-hidden="true"></i>Group
+                  </button>
+                </div>
 
-            <li>
-              <a href="AssignmentEditor/" style="display: block"
-                >A2 - CSS + Bootstrap</a
-              >
-              <a href="">Multiple Modules</a> | Not available yet
-            </li>
+                <div>
+                  <button type="button" class="btn btn-danger border border-3">
+                    <i class="fa fa-plus pe-1" aria-hidden="true"></i>Assignment
+                  </button>
+                </div>
+                <div class="btn p-0 border border-3">
+                  <button
+                    class="btn btn-secondary"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Edit</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Speed Grader</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Duplicate</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Move To..</a></li>
+                    <li><a class="dropdown-item" href="#">Send To..</a></li>
+                    <li><a class="dropdown-item" href="#">Copy To..</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Share To Commons</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <hr />
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-secondary h5">
+                  Assignments
+                  <div class="float-end">
+                    <button
+                      type="button"
+                      class="btn btn-outline-secondary me-2 rounded-pill"
+                    >
+                      40% of Total
+                    </button>
+                    <i
+                      class="fa fa-plus text-muted me-2"
+                      aria-hidden="true"
+                    ></i>
+                    <div class="btn p-0 border border-3">
+                      <button
+                        class="btn btn-secondary"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Speed Grader</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Duplicate</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Move To..</a></li>
+                        <li><a class="dropdown-item" href="#">Send To..</a></li>
+                        <li><a class="dropdown-item" href="#">Copy To..</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Share To Commons</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item m-0">
+                  <div
+                    class="d-inline-flex flex-column justify-content-between"
+                  >
+                    <h5 class="mb-1">
+                      <a
+                        href="AssignmentEditor/"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-dark"
+                        >A1 - ENV + HTML</a
+                      >
+                    </h5>
+                    <p class="mb-1">
+                      Week 0 - SETUP - Week Starting on Monday
+                      September-5th(9/5/2022) Module |
+                    </p>
+                    <p>
+                      <span class="fw-bold">Due</span> Sept 18 2022 at 11:56 pm
+                      | 100 pts
+                    </p>
+                  </div>
 
-            <li>
-              <a href="AssignmentEditor/" style="display: block"
-                >A3 - Js + React</a
-              >
-              <a href="">Multiple Modules</a> | Not available yet
-            </li>
+                  <div class="float-end">
+                    <i
+                      class="fa fa-check-circle text-success pe-3"
+                      aria-hidden="true"
+                    ></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item m-0">
+                  <div
+                    class="d-inline-flex flex-column justify-content-between"
+                  >
+                    <h5 class="mb-1">
+                      <a
+                        href="AssignmentEditor/"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-dark"
+                        >A2 - CSS + Bootstrap</a
+                      >
+                    </h5>
+                    <p class="mb-1">
+                      Week 1 - SETUP - Week Starting on Monday
+                      September-5th(9/5/2022) Module |
+                    </p>
+                    <p>
+                      <span class="fw-bold">Due</span> Sept 18 2022 at 11:56 pm
+                      | 100 pts
+                    </p>
+                  </div>
 
-            <li>
-              <a href="AssignmentEditor/" style="display: block"
-                >A4 - State + Redux</a
-              >
-              <a href="">Multiple Modules</a> | Not available yet
-            </li>
-          </ul>
+                  <div class="float-end">
+                    <i
+                      class="fa fa-check-circle text-success pe-3"
+                      aria-hidden="true"
+                    ></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item m-0">
+                  <div
+                    class="d-inline-flex flex-column justify-content-between"
+                  >
+                    <h5 class="mb-1">
+                      <a
+                        href="AssignmentEditor/"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-dark"
+                        >A3 - Js + React</a
+                      >
+                    </h5>
+                    <p class="mb-1">
+                      Week 2 - SETUP - Week Starting on Monday
+                      September-5th(9/5/2022) Module |
+                    </p>
+                    <p>
+                      <span class="fw-bold">Due</span> Sept 18 2022 at 11:56 pm
+                      | 100 pts
+                    </p>
+                  </div>
 
-          <h1 style="display: inline">QUIZZES 40% of Total</h1>
+                  <div class="float-end">
+                    <i
+                      class="fa fa-check-circle text-success pe-3"
+                      aria-hidden="true"
+                    ></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item m-0">
+                  <div
+                    class="d-inline-flex flex-column justify-content-between"
+                  >
+                    <h5 class="mb-1">
+                      <a
+                        href="AssignmentEditor/"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-dark"
+                        >A4 - State + Redux</a
+                      >
+                    </h5>
+                    <p class="mb-1">
+                      Week 3 - SETUP - Week Starting on Monday
+                      September-5th(9/5/2022) Module |
+                    </p>
+                    <p>
+                      <span class="fw-bold">Due</span> Sept 18 2022 at 11:56 pm
+                      | 100 pts
+                    </p>
+                  </div>
 
-          <select>
-            <option>Edit</option>
-            <option>Speed Grader</option>
-            <option>Duplicate</option>
-            <option>Delete</option>
-            <option>Move To..</option>
-            <option>Send To..</option>
-            <option>Copy To..</option>
-            <option>Share To Commons</option>
-          </select>
-          <ul>
-            <li>
-              <a href="" style="display: block">Q1 - ENV + HTML</a>
-              <a href="">Multiple Modules</a> | Not available yet
-            </li>
+                  <div class="float-end">
+                    <i
+                      class="fa fa-check-circle text-success pe-3"
+                      aria-hidden="true"
+                    ></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item list-group-item-secondary h5">
+                  Quizzes
+                  <div class="float-end">
+                    <button
+                      type="button"
+                      class="btn btn-outline-secondary me-2 rounded-pill"
+                    >
+                      40% of Total
+                    </button>
+                    <i
+                      class="fa fa-plus text-muted me-2"
+                      aria-hidden="true"
+                    ></i>
+                    <div class="btn p-0 border border-3">
+                      <button
+                        class="btn btn-secondary"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Speed Grader</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Duplicate</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Move To..</a></li>
+                        <li><a class="dropdown-item" href="#">Send To..</a></li>
+                        <li><a class="dropdown-item" href="#">Copy To..</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Share To Commons</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item m-0">
+                  <div
+                    class="d-inline-flex flex-column justify-content-between"
+                  >
+                    <h5 class="mb-1">
+                      <a
+                        href="AssignmentEditor/"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-dark"
+                        >Q1 - ENV + HTML</a
+                      >
+                    </h5>
+                    <p class="mb-1">
+                      Week 0 - SETUP - Week Starting on Monday
+                      September-5th(9/5/2022) Module |
+                    </p>
+                    <p>
+                      <span class="fw-bold">Due</span> Sept 18 2022 at 11:56 pm
+                      | 100 pts
+                    </p>
+                  </div>
 
-            <li>
-              <a href="" style="display: block">Q2 - CSS + Bootstrap</a>
-              <a href="">Multiple Modules</a> | Not available yet
-            </li>
+                  <div class="float-end">
+                    <i
+                      class="fa fa-check-circle text-success pe-3"
+                      aria-hidden="true"
+                    ></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item m-0">
+                  <div
+                    class="d-inline-flex flex-column justify-content-between"
+                  >
+                    <h5 class="mb-1">
+                      <a
+                        href="AssignmentEditor/"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-dark"
+                        >Q2 - CSS + Bootstrap</a
+                      >
+                    </h5>
+                    <p class="mb-1">
+                      Week 1 - SETUP - Week Starting on Monday
+                      September-5th(9/5/2022) Module |
+                    </p>
+                    <p>
+                      <span class="fw-bold">Due</span> Sept 18 2022 at 11:56 pm
+                      | 100 pts
+                    </p>
+                  </div>
 
-            <li>
-              <a href="" style="display: block">Q3 - Js + React</a>
-              <a href="">Multiple Modules</a> | Not available yet
-            </li>
+                  <div class="float-end">
+                    <i
+                      class="fa fa-check-circle text-success pe-3"
+                      aria-hidden="true"
+                    ></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item m-0">
+                  <div
+                    class="d-inline-flex flex-column justify-content-between"
+                  >
+                    <h5 class="mb-1">
+                      <a
+                        href="AssignmentEditor/"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-dark"
+                        >Q3 - Js + React</a
+                      >
+                    </h5>
+                    <p class="mb-1">
+                      Week 2 - SETUP - Week Starting on Monday
+                      September-5th(9/5/2022) Module |
+                    </p>
+                    <p>
+                      <span class="fw-bold">Due</span> Sept 18 2022 at 11:56 pm
+                      | 100 pts
+                    </p>
+                  </div>
 
-            <li>
-              <a href="" style="display: block">Q4 - State + Redux</a>
-              <a href="">Multiple Modules</a> | Not available yet
-            </li>
-          </ul>
+                  <div class="float-end">
+                    <i
+                      class="fa fa-check-circle text-success pe-3"
+                      aria-hidden="true"
+                    ></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item m-0">
+                  <div
+                    class="d-inline-flex flex-column justify-content-between"
+                  >
+                    <h5 class="mb-1">
+                      <a
+                        href="AssignmentEditor/"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-dark"
+                        >Q4 - State + Redux</a
+                      >
+                    </h5>
+                    <p class="mb-1">
+                      Week 3 - SETUP - Week Starting on Monday
+                      September-5th(9/5/2022) Module |
+                    </p>
+                    <p>
+                      <span class="fw-bold">Due</span> Sept 18 2022 at 11:56 pm
+                      | 100 pts
+                    </p>
+                  </div>
 
-          <h1 style="display: inline">EXAMS 20% of Total</h1>
+                  <div class="float-end">
+                    <i
+                      class="fa fa-check-circle text-success pe-3"
+                      aria-hidden="true"
+                    ></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item list-group-item-secondary h5">
+                  EXAMS
+                  <div class="float-end">
+                    <button
+                      type="button"
+                      class="btn btn-outline-secondary me-2 rounded-pill"
+                    >
+                      20% of Total
+                    </button>
+                    <i
+                      class="fa fa-plus text-muted me-2"
+                      aria-hidden="true"
+                    ></i>
+                    <div class="btn p-0 border border-3">
+                      <button
+                        class="btn btn-secondary"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Speed Grader</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Duplicate</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Move To..</a></li>
+                        <li><a class="dropdown-item" href="#">Send To..</a></li>
+                        <li><a class="dropdown-item" href="#">Copy To..</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Share To Commons</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item m-0">
+                  <div
+                    class="d-inline-flex flex-column justify-content-between"
+                  >
+                    <h5 class="mb-1">
+                      <a
+                        href="AssignmentEditor/"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-dark"
+                        >MidTerm</a
+                      >
+                    </h5>
 
-          <select>
-            <option>Edit</option>
-            <option>Speed Grader</option>
-            <option>Duplicate</option>
-            <option>Delete</option>
-            <option>Move To..</option>
-            <option>Send To..</option>
-            <option>Copy To..</option>
-            <option>Share To Commons</option>
-          </select>
-          <ul>
-            <li>
-              <a href="" style="display: block">MidTerm</a>
-              <a href="">Multiple Modules</a> | Not available yet
-            </li>
+                    <p>
+                      <span class="fw-bold">Due</span> Sept 18 2022 at 11:56 pm
+                      | 100 pts
+                    </p>
+                  </div>
 
-            <li>
-              <a href="" style="display: block">Final</a>
-              <a href="">Multiple Modules</a> | Not available yet
-            </li>
-          </ul>
+                  <div class="float-end">
+                    <i
+                      class="fa fa-check-circle text-success pe-3"
+                      aria-hidden="true"
+                    ></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item m-0">
+                  <div
+                    class="d-inline-flex flex-column justify-content-between"
+                  >
+                    <h5 class="mb-1">
+                      <a
+                        href="AssignmentEditor/"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-dark"
+                        >Final</a
+                      >
+                    </h5>
 
-          <h1 style="display: inline">PROJECTS 30% of Total</h1>
+                    <p>
+                      <span class="fw-bold">Due</span> Sept 18 2022 at 11:56 pm
+                      | 100 pts
+                    </p>
+                  </div>
 
-          <select>
-            <option>Edit</option>
-            <option>Speed Grader</option>
-            <option>Duplicate</option>
-            <option>Delete</option>
-            <option>Move To..</option>
-            <option>Send To..</option>
-            <option>Copy To..</option>
-            <option>Share To Commons</option>
-          </select>
-          <ul>
-            <li>
-              <a href="" style="display: block">Project</a>
-              <a href="">Multiple Modules</a> | Not available yet
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </table>
+                  <div class="float-end">
+                    <i
+                      class="fa fa-check-circle text-success pe-3"
+                      aria-hidden="true"
+                    ></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+
+                <li class="list-group-item list-group-item-secondary h5">
+                  PROJECTS
+                  <div class="float-end">
+                    <button
+                      type="button"
+                      class="btn btn-outline-secondary me-2 rounded-pill"
+                    >
+                      30% of Total
+                    </button>
+                    <i
+                      class="fa fa-plus text-muted me-2"
+                      aria-hidden="true"
+                    ></i>
+                    <div class="btn p-0 border border-3">
+                      <button
+                        class="btn btn-secondary"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Speed Grader</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Duplicate</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Move To..</a></li>
+                        <li><a class="dropdown-item" href="#">Send To..</a></li>
+                        <li><a class="dropdown-item" href="#">Copy To..</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Share To Commons</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item m-0">
+                  <div
+                    class="d-inline-flex flex-column justify-content-between"
+                  >
+                    <h5 class="mb-1">
+                      <a
+                        href="AssignmentEditor/"
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-dark"
+                        >Project</a
+                      >
+                    </h5>
+                    <p class="mb-1">
+                      Week 0 - SETUP - Week Starting on Monday
+                      September-5th(9/5/2022) Module |
+                    </p>
+                    <p>
+                      <span class="fw-bold">Due</span> Sept 18 2022 at 11:56 pm
+                      | 100 pts
+                    </p>
+                  </div>
+
+                  <div class="float-end">
+                    <i
+                      class="fa fa-check-circle text-success pe-3"
+                      aria-hidden="true"
+                    ></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
