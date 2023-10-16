@@ -1,0 +1,62 @@
+.wd-kanbas-navigation .wd-icon {
+  font-size: 2em;
+}
+
+.wd .list-group-item {
+  border: 0px !important;
+}
+
+.wd-fared {
+  color: red;
+}
+
+.selected {
+  color: black;
+  border-style: solid;
+  border-left: 1px;
+}
+
+.container-fluid {
+  height: 100%;
+  align-items: stretch;
+}
+
+a:hover {
+  text-decoration: underline !important;
+}
+
+div.col-auto a {
+  text-decoration: none !important;
+}
+
+div.offcanvas a {
+  text-decoration: none !important;
+}
+
+.card a {
+  text-decoration: none !important;
+}
+
+.card a:hover {
+  text-decoration: underline !important;
+}
+.wd.list-group .list-group-item:first-child {
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+.sublist > .list-group-item {
+  padding-left: 45px;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: var(--bs-breadcrumb-divider, ">") !important;
+}
+
+.wd-link {
+  text-decoration: none !important;
+}
+.wd-link:hover {
+  text-decoration: underline !important;
+  text-underline-offset: 0.25em !important;
+}
