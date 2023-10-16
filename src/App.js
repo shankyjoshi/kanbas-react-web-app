@@ -10,19 +10,16 @@ import "./App.css";
 function App() {
   return (
     <HashRouter>
-      <div>
-        <div className="wd-routes">
-          <Routes>
-            <Route path="/" element={<Navigate to="Labs" />} />
-            <Route path="/Hello" element={<HelloWorld />} />
-            <Route path="/Labs/*" element={<Labs />} />
-            <Route path="/Kanbas/*" element={<Kanbas />} />
-          </Routes>
-        </div>
-        {/* {screen === "Hello" && <HelloWorld />}
+      <Routes>
+        <Route path="/" element={<Navigate to="Labs" />} />
+        <Route path="/Hello" element={<HelloWorld />} />
+        <Route path="/Labs/*" element={<Labs />} />
+        <Route path="/Kanbas/*" element={<Kanbas />} />
+      </Routes>
+
+      {/* {screen === "Hello" && <HelloWorld />}
       {screen === "Labs" && <Labs />}
       {screen === "Kanbas" && <Kanbas />} */}
-      </div>
     </HashRouter>
   );
 }

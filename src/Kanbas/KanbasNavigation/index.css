@@ -16,11 +16,6 @@
   border-left: 1px;
 }
 
-.container-fluid {
-  height: 100%;
-  align-items: stretch;
-}
-
 a:hover {
   text-decoration: underline !important;
 }

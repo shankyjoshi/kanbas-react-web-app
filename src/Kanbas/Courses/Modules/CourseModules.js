@@ -7,7 +7,7 @@ const CourseModules = (props) => {
   const { courseId } = useParams();
 
   return (
-    <ul className="list-group flex-grow-1">
+    <ul className="list-group flex-grow-1 mt-5 mt-md-0">
       {modules
         .filter((x) => x.course === courseId)
         .map((module, index) => (
