@@ -16,9 +16,12 @@ function Dashboard() {
         <div className="d-flex flex-column flex-fill ms-4">
           <h3 className="fw-medium">Published Courses({courses.length})</h3>
           <hr />
-          <div className="d-flex flex-row flex-wrap grid gap-4">
+          <div className="row grid gap-4">
             {courses.map((course) => (
-              <div className="card" style={{ width: "18rem" }} key={course._id}>
+              <div
+                className="card col-12 col-sm-6 col-md-4 col-lg-3 p-0"
+                key={course._id}
+              >
                 <div
                   className="card-header bg-primary"
                   style={{ height: "150px" }}

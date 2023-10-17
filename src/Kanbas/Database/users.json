@@ -88,5 +88,14 @@
       "email": "legolas@mirkwood.com",
       "dob": "2879-07-15",
       "role": "FACULTY"
+    },  {
+      "_id": "130",
+      "username": "anoynmous",
+      "password": "anoynmous123",
+      "firstName": "Anatony",
+      "lastName": "Greenleaf",
+      "email": "legolas@mirkwood.com",
+      "dob": "2879-07-15",
+      "role": "FACULTY"
     }
   ]

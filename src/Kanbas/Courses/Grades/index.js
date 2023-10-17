@@ -1,6 +1,7 @@
 import {
   FaArrowDown,
   FaCog,
+  FaEdit,
   FaFileExport,
   FaFileImport,
   FaSearch,
@@ -211,11 +212,16 @@ const Grades = () => {
                     return (
                       <td>
                         {grade?.grade || (
-                          <input
-                            type="number"
-                            class="form-control"
-                            value="78"
-                          />
+                          <div class="input-group mb-3">
+                            <input
+                              type="number"
+                              class="form-control"
+                              aria-describedby="basic-addon2"
+                            />
+                            <span class="input-group-text" id="basic-addon2">
+                              <FaEdit className="fs-6" />
+                            </span>
+                          </div>
                         )}
                       </td>
                     );

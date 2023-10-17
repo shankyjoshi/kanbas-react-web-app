@@ -13,32 +13,42 @@ const CourseNavBar = () => {
   const courseId = object.courseId;
   const course = db.courses.find((x) => x._id === courseId);
   const getActiveClass = (index) => {
-    return index == restPath.length - 1 ? " active" : " fw-semibold";
+    return index == restPath.length - 1 ? " active" : "text-danger fw-semibold";
+  };
+
+  const renderBreadCrumbs = () => {
+    let basePath = `/Kanbas/Courses/${courseId}`;
+    return restPath.map((path, index) => {
+      basePath += "/" + path;
+      return (
+        <li className="breadcrumb-item ">
+          <Link to={basePath} className={"wd-link " + getActiveClass(index)}>
+            <span className="fw-semibold">{path}</span>
+          </Link>
+        </li>
+      );
+    });
   };
   return (
     <>
       <div className="flex-row d-none d-md-block">
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb m-0">
-            <li className="breadcrumb-item text-danger">
-              <FaBars className="me-2" style={{ fontSize: "1.5em" }} />
+            <li className="breadcrumb-item ">
+              <FaBars
+                className="me-2 text-danger"
+                style={{ fontSize: "1.5em" }}
+              />
               <Link
                 to={`/Kanbas/Courses/${courseId}`}
-                className="wd-link fw-semibold"
+                className="wd-link fw-semibold text-danger"
               >
                 <span className="fw-semibold">
                   {course.name}.{course.number}
                 </span>
               </Link>
             </li>
-            {restPath.map((path, index) => (
-              <li
-                className={"breadcrumb-item" + getActiveClass(index)}
-                aria-current="page"
-              >
-                {path}
-              </li>
-            ))}
+            {renderBreadCrumbs()}
           </ol>
         </nav>
         <hr />
