@@ -5,7 +5,7 @@ import CourseModules from "../Modules/CourseModules";
 import "./home.css";
 const Home = () => {
   return (
-    <div className="d-flex flex-fill">
+    <div className="d-flex flex-fill mt-sm-5 mt-md-0">
       <div className="d-flex flex-column flex-grow-1">
         <div className="d-flex flex-row gap-1 justify-content-end">
           <div>
