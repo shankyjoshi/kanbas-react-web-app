@@ -18,7 +18,7 @@ function Courses() {
     <div class="d-flex flex-fill flex-column p-3">
       {/* <h1>Courses {course._id}</h1> */}
       <CourseNavBar />
-      <div class="d-flex">
+      <div class="d-flex mt-sm-5 mt-md-0">
         <CourseNavigation />
 
         <Routes>
