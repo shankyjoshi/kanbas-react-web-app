@@ -3,12 +3,14 @@ import Assignment3 from "./a3";
 import Assignment4 from "./a4";
 import Assignment5 from "./a5";
 import Nav from "../nav";
+import { Provider } from "react-redux";
+import store from "./store";
 
 export function Labs() {
   const { pathname } = useLocation();
   // const { pathname } = location;
   return (
-    <>
+    <Provider store={store}>
       <Nav />
       <div className="container">
         <h1>Labs</h1>
@@ -37,14 +39,14 @@ export function Labs() {
           {/* <Route path="/" element={<Assignment3 />} /> */}
           <Route path="/" element={<Navigate to="a3" />} />
           <Route path="a3/*" element={<Assignment3 />} />
-          <Route path="a4" element={<Assignment4 />} />
+          <Route path="a4/*" element={<Assignment4 />} />
           <Route path="a5" element={<Assignment5 />} />
         </Routes>
         {/* <Assignment3 />
             <Assignment4 />
             <Assignment5 /> */}
       </div>
-    </>
+    </Provider>
   );
 }
 
