@@ -1,22 +1,47 @@
 import { useNavigate, useParams } from "react-router";
 import db from "../../Database";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addAssignment, updateAssignment } from "./assignmentsReducer";
 
 const EditAssignment = () => {
-  const assignments = db.assignments;
+  const assignments = useSelector(
+    (state) => state.assignmentsReducer.assignments
+  );
   const { courseId, assignid } = useParams();
-
-  const assignment = assignments.find(
+  const dispatch = useDispatch();
+  const findAssignment = assignments.find(
     (assignment) => assignment._id === assignid
   );
+
+  const [assignment, setAssignment] = useState(
+    findAssignment || {
+      title: "New Assignment",
+      course: courseId,
+    }
+  );
+
+  const AddFlag = !findAssignment;
 
   const navigate = useNavigate();
   const handleCancel = () => {
     console.log("Actually cancelling assignment TBD in later assignments");
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
-  const handleSave = () => {
+  const handleSave = (e) => {
+    e.preventDefault();
     console.log("Actually saving assignment TBD in later assignments");
+    if (AddFlag) {
+      dispatch(addAssignment(assignment));
+    } else {
+      dispatch(updateAssignment(assignment));
+    }
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+  };
+
+  const handleValueChange = (e) => {
+    e.preventDefault();
+    setAssignment({ ...assignment, [e.target.name]: e.target.value });
   };
 
   return (
@@ -28,15 +53,23 @@ const EditAssignment = () => {
           </label>
           <input
             type="text"
+            name="title"
             className="form-control"
             value={assignment.title}
+            onChange={handleValueChange}
             id="assignmentName"
             placeholder="Assignment Name"
           />
         </div>
 
-        <textarea className="form-control" cols="50" rows="5">
-          This is the assignment description.
+        <textarea
+          name="description"
+          onChange={handleValueChange}
+          className="form-control"
+          cols="50"
+          rows="5"
+        >
+          {assignment.description}
         </textarea>
         <div className="container text-end">
           <div className="row m-2 g-3">
@@ -330,7 +363,13 @@ const EditAssignment = () => {
                   >
                     Due
                   </label>
-                  <input type="date" className="form-control" />
+                  <input
+                    name="availDueDate"
+                    value={assignment.availDueDate}
+                    onChange={handleValueChange}
+                    type="date"
+                    className="form-control"
+                  />
                   <div className="row">
                     <div className="col-6 pe-0">
                       <label
@@ -339,7 +378,13 @@ const EditAssignment = () => {
                       >
                         Availaible From
                       </label>
-                      <input type="date" className="form-control" />
+                      <input
+                        name="availFromDate"
+                        value={assignment.availFromDate}
+                        onChange={handleValueChange}
+                        type="date"
+                        className="form-control"
+                      />
                     </div>
 
                     <div className="col-6 ps-1">
@@ -349,7 +394,13 @@ const EditAssignment = () => {
                       >
                         Until
                       </label>
-                      <input type="date" className="form-control" />
+                      <input
+                        name="availDueDate"
+                        value={assignment.availDueDate}
+                        onChange={handleValueChange}
+                        type="date"
+                        className="form-control"
+                      />
                     </div>
                   </div>
                 </div>

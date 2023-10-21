@@ -6,7 +6,7 @@ import CourseNavigation from "./CourseNavigation";
 import CourseNavBar from "./CourseNavBar";
 import Home from "./Home";
 import CourseModules from "./Modules/CourseModules";
-import Assignments from "./Assignments";
+import Assignments from "./Assignments/Assignments";
 import EditAssignment from "./Assignments/EditAssignment";
 import Grades from "./Grades";
 import Settings from "./Settings";

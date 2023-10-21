@@ -1,8 +1,19 @@
+import { useState } from "react";
 import db from "../Database";
 import { Link } from "react-router-dom";
 
 function Dashboard() {
-  const courses = db.courses;
+  const [courses, setCourses] = useState(db.courses);
+  const course = {
+    name: "New Course",
+    number: "New Number",
+    startDate: "2023-09-10",
+    endDate: "2023-12-15",
+  };
+
+  const handleAddCourse = () => {
+    setCourses([...courses, { ...course, _id: new Date().getTime() }]);
+  };
 
   return (
     <div>
@@ -14,7 +25,15 @@ function Dashboard() {
         <hr />
 
         <div className="d-flex flex-column flex-fill ms-4">
-          <h3 className="fw-medium">Published Courses({courses.length})</h3>
+          <h3 className="fw-medium">
+            Published Courses({courses.length})
+            <button
+              className="btn btn-primary float-end"
+              onClick={handleAddCourse}
+            >
+              Add Course
+            </button>
+          </h3>
           <hr />
           <div className="row grid gap-4">
             {courses.map((course) => (
