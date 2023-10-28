@@ -6,6 +6,7 @@ import Dashboard from "./Dashboard";
 import CourseNavBar from "./Courses/CourseNavBar";
 import { Provider } from "react-redux";
 import store from "./store";
+import AddEditCourse from "./Dashboard/AddEditCourse";
 
 function Kanbas() {
   return (
@@ -16,16 +17,10 @@ function Kanbas() {
           <Routes>
             <Route path="/" element={<Navigate to="Dashboard" />} />
             <Route path="Account/*" element={<Account />} />
-            <Route path="Dashboard" element={<Dashboard />} />
+            <Route path="Dashboard/*" element={<Dashboard />} />
             <Route path="Courses" element={<Navigate to="RS101" />} />
             <Route path="Courses/:courseId/*" element={<Courses />} />
             <Route path="Calendar" element={<h1>Calendar</h1>} />
-            <Route
-              path="*"
-              element={
-                <h1 className="display-6">Looks like this is in Progress</h1>
-              }
-            />
           </Routes>
         </div>
       </div>

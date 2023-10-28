@@ -10,10 +10,13 @@ import Assignments from "./Assignments/Assignments";
 import EditAssignment from "./Assignments/EditAssignment";
 import Grades from "./Grades";
 import Settings from "./Settings";
+import { useSelector } from "react-redux";
 
 function Courses() {
   const { courseId } = useParams();
-  const course = db.courses.find((course) => course._id === courseId);
+  const course = useSelector((state) =>
+    state.coursesReducer.courses.find((course) => course._id === courseId)
+  );
   return (
     <div class="d-flex flex-fill flex-column p-3">
       {/* <h1>Courses {course._id}</h1> */}

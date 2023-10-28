@@ -1,17 +1,17 @@
-import { useLocation, useParams } from "react-router-dom";
-import KanbasNavigation from "../KanbasNavigation";
+import { useParams } from "react-router-dom";
 import KanbasLinks from "../KanbasNavigation/KanbasLinks";
 import CourseNavLinks from "./CourseNavLinks";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import db from "../Database";
+import { useSelector } from "react-redux";
 const CourseNavBar = () => {
-  const { pathname } = useLocation();
   const object = useParams();
   const restPath = object["*"].split("/");
   console.log(restPath);
   const courseId = object.courseId;
-  const course = db.courses.find((x) => x._id === courseId);
+  const course = useSelector((state) =>
+    state.coursesReducer.courses.find((course) => course._id === courseId)
+  );
   const getActiveClass = (index) => {
     return index == restPath.length - 1 ? " active" : "text-danger fw-semibold";
   };

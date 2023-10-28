@@ -1,13 +1,55 @@
 import { FaCheckCircle, FaPlus, FaEllipsisV, FaLink } from "react-icons/fa";
 import db from "../../Database";
-import React from "react";
+import React, { useState } from "react";
 import { useLocation, useParams } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { addModule, deleteModule, updateModule } from "./modulesReducer";
 const CourseModules = (props) => {
-  const modules = db.modules;
+  const modules = useSelector((state) => state.modulesReducer.modules);
   const { courseId } = useParams();
-
+  const [mod, setMod] = useState({
+    name: "New Module",
+    description: "This is a new Module",
+    course: courseId,
+  });
+  const dispatch = useDispatch();
   return (
     <ul className="list-group flex-grow-1 mt-5 mt-md-0">
+      <li className="list-group-item">
+        <input
+          className="form-control mb-2"
+          value={mod.name}
+          onChange={(e) =>
+            setMod({
+              ...mod,
+              name: e.target.value,
+            })
+          }
+        />
+        <textarea
+          className="form-control mb-2"
+          value={mod.description}
+          onChange={(e) =>
+            setMod({
+              ...mod,
+              description: e.target.value,
+            })
+          }
+        />
+        <button
+          onClick={() => dispatch(updateModule(mod))}
+          className="btn btn-primary mb-2 me-2"
+        >
+          Update
+        </button>
+        <button
+          onClick={() => dispatch(addModule(mod))}
+          className=" btn btn-success mb-2"
+        >
+          Add
+        </button>
+      </li>
+
       {modules
         .filter((x) => x.course === courseId)
         .map((module, index) => (
@@ -15,6 +57,18 @@ const CourseModules = (props) => {
             <li className="list-group-item list-group-item-secondary">
               <span className="h5">{module.name}</span>
               <div className="float-end">
+                <button
+                  onClick={() => setMod(module)}
+                  className="btn btn-primary me-2"
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => dispatch(deleteModule(module._id))}
+                  className="btn btn-danger me-2"
+                >
+                  Delete
+                </button>
                 <FaCheckCircle className="text-success" />
                 <FaPlus className="wd-home-faplus text-muted ps-3" />
                 <FaEllipsisV className=" wd-home-faellipse text-muted ps-3" />
@@ -29,13 +83,14 @@ const CourseModules = (props) => {
             </li>
 
             <span className="sublist h6 m-0">
-              <li className=" sublist list-group-item">
-                Introduction to the course
+              <li className=" sublist list-group-item ">
+                {module.description}
                 <div className="float-end">
                   <FaCheckCircle className="  wd-font-size-2  text-success pe-3" />
                   <FaEllipsisV />
                 </div>
               </li>
+
               <li className=" sublist list-group-item">
                 Learn what is Web Development
                 <div className="float-end">
