@@ -7,6 +7,8 @@ import Nav from "./nav";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./App.css";
+import { Provider } from "react-redux";
+import store from "../src/Kanbas/store";
 function App() {
   return (
     <HashRouter>
@@ -14,7 +16,14 @@ function App() {
         <Route path="/" element={<Navigate to="Labs" />} />
         <Route path="/Hello" element={<HelloWorld />} />
         <Route path="/Labs/*" element={<Labs />} />
-        <Route path="/Kanbas/*" element={<Kanbas />} />
+        <Route
+          path="/Kanbas/*"
+          element={
+            <Provider store={store}>
+              <Kanbas />
+            </Provider>
+          }
+        />
       </Routes>
 
       {/* {screen === "Hello" && <HelloWorld />}
