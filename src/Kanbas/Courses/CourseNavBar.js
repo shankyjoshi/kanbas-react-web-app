@@ -4,18 +4,22 @@ import CourseNavLinks from "./CourseNavLinks";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import * as client from "../Dashboard/client";
 const CourseNavBar = () => {
   const object = useParams();
   const restPath = object["*"].split("/");
-  console.log(restPath);
   const courseId = object.courseId;
-  const course = useSelector((state) =>
-    state.coursesReducer.courses.find((course) => course._id === courseId)
-  );
+  const [course, setCourse] = useState({});
   const getActiveClass = (index) => {
     return index == restPath.length - 1 ? " active" : "text-danger fw-semibold";
   };
-
+  useEffect(() => {
+    console.log(courseId);
+    client.findCourseById(courseId).then((course) => {
+      setCourse(course);
+    });
+  }, []);
   const renderBreadCrumbs = () => {
     let basePath = `/Kanbas/Courses/${courseId}`;
     return restPath.map((path, index) => {

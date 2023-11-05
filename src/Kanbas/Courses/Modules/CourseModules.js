@@ -1,18 +1,48 @@
 import { FaCheckCircle, FaPlus, FaEllipsisV, FaLink } from "react-icons/fa";
-import db from "../../Database";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { addModule, deleteModule, updateModule } from "./modulesReducer";
+import {
+  addModule,
+  deleteModule,
+  setModules,
+  updateModule,
+} from "./modulesReducer";
+import * as client from "./client";
 const CourseModules = (props) => {
   const modules = useSelector((state) => state.modulesReducer.modules);
   const { courseId } = useParams();
-  const [mod, setMod] = useState({
+  const defaultNewModule = {
     name: "New Module",
     description: "This is a new Module",
     course: courseId,
-  });
+  };
+  const [mod, setMod] = useState(defaultNewModule);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    client
+      .findModulesForCourse(courseId)
+      .then((modules) => dispatch(setModules(modules)));
+  }, [courseId]);
+
+  const handleAddModule = () => {
+    client.createModule(courseId, mod).then((module) => {
+      dispatch(addModule(module));
+    });
+    setMod(defaultNewModule);
+  };
+  const handleUpdateModule = async () => {
+    const status = await client.updateModule(mod);
+    dispatch(updateModule(mod));
+    setMod(defaultNewModule);
+  };
+
+  const handleDeleteModule = async (id) => {
+    const status = await client.deleteModule(id);
+    dispatch(deleteModule(id));
+  };
+
   return (
     <ul className="list-group flex-grow-1 mt-5 mt-md-0">
       <li className="list-group-item">
@@ -37,15 +67,12 @@ const CourseModules = (props) => {
           }
         />
         <button
-          onClick={() => dispatch(updateModule(mod))}
+          onClick={handleUpdateModule}
           className="btn btn-primary mb-2 me-2"
         >
           Update
         </button>
-        <button
-          onClick={() => dispatch(addModule(mod))}
-          className=" btn btn-success mb-2"
-        >
+        <button onClick={handleAddModule} className=" btn btn-success mb-2">
           Add
         </button>
       </li>
@@ -64,7 +91,7 @@ const CourseModules = (props) => {
                   Edit
                 </button>
                 <button
-                  onClick={() => dispatch(deleteModule(module._id))}
+                  onClick={() => handleDeleteModule(module._id)}
                   className="btn btn-danger me-2"
                 >
                   Delete

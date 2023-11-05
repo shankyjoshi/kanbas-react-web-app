@@ -1,11 +1,24 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { deleteCourse, updateCourse } from "./coursesReducer";
+import { deleteCourse, setCourses, updateCourse } from "./coursesReducer";
+import { useEffect } from "react";
+import { delCourse, getAllCourses } from "./client";
 
 const Home = () => {
   const courses = useSelector((state) => state.coursesReducer.courses);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  useEffect(() => {
+    getAllCourses().then((courses) => {
+      dispatch(setCourses(courses));
+    });
+  }, []);
+
+  const handleDelete = (courseId) => {
+    delCourse(courseId).then(() => {
+      dispatch(deleteCourse(courseId));
+    });
+  };
   return (
     <div className="d-flex flex-column flex-fill ms-4">
       <h3 className="fw-medium">
@@ -56,7 +69,7 @@ const Home = () => {
                 </button>
                 <button
                   className="btn btn-danger me-2 rounded-pill"
-                  onClick={() => dispatch(deleteCourse(course._id))}
+                  onClick={() => handleDelete(course._id)}
                 >
                   Delete
                 </button>

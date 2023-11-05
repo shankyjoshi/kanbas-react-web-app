@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
 import { addCourse, updateCourse } from "./coursesReducer";
 import { useState } from "react";
+import { createCourse, updCourse } from "./client";
 
 const AddEditCourse = () => {
   const dispatch = useDispatch();
@@ -26,9 +27,13 @@ const AddEditCourse = () => {
 
   const handleSaveCourse = () => {
     if (currentCourse) {
-      dispatch(updateCourse(course));
+      updCourse(course).then((course) => {
+        dispatch(updateCourse(course));
+      });
     } else {
-      dispatch(addCourse(course));
+      createCourse(course).then((course) => {
+        dispatch(addCourse(course));
+      });
     }
     navigate("/Kanbas/Dashboard");
   };
