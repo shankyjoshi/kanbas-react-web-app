@@ -1,27 +1,33 @@
 import { useNavigate, useParams } from "react-router";
 import db from "../../Database";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addAssignment, updateAssignment } from "./assignmentsReducer";
-
+import * as client from "./client";
 const EditAssignment = () => {
-  const assignments = useSelector(
-    (state) => state.assignmentsReducer.assignments
-  );
   const { courseId, assignid } = useParams();
   const dispatch = useDispatch();
-  const findAssignment = assignments.find(
-    (assignment) => assignment._id === assignid
-  );
 
-  const [assignment, setAssignment] = useState(
-    findAssignment || {
-      title: "New Assignment",
-      course: courseId,
-    }
-  );
+  const [assignment, setAssignment] = useState({});
 
-  const AddFlag = !findAssignment;
+  const [addFlag, setAddFlag] = useState(false);
+
+  useEffect(() => {
+    client
+      .findAssignmentById(assignid)
+      .then((assignment) => {
+        setAssignment(assignment);
+      })
+      .catch((err) => {
+        setAddFlag(true);
+        setAssignment({
+          _id: assignid,
+          title: "New Assignment",
+          description: "New Description",
+          course: courseId,
+        });
+      });
+  }, [assignid]);
 
   const navigate = useNavigate();
   const handleCancel = () => {
@@ -31,10 +37,14 @@ const EditAssignment = () => {
   const handleSave = (e) => {
     e.preventDefault();
     console.log("Actually saving assignment TBD in later assignments");
-    if (AddFlag) {
-      dispatch(addAssignment(assignment));
+    if (addFlag) {
+      client.createAssignment(assignment).then((assignment) => {
+        dispatch(addAssignment(assignment));
+      });
     } else {
-      dispatch(updateAssignment(assignment));
+      client.updateAssignment(assignment).then((assignment) => {
+        dispatch(updateAssignment(assignment));
+      });
     }
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
@@ -65,12 +75,11 @@ const EditAssignment = () => {
         <textarea
           name="description"
           onChange={handleValueChange}
+          value={assignment.description}
           className="form-control"
           cols="50"
           rows="5"
-        >
-          {assignment.description}
-        </textarea>
+        />
         <div className="container text-end">
           <div className="row m-2 g-3">
             <div className="col-3">
@@ -395,8 +404,8 @@ const EditAssignment = () => {
                         Until
                       </label>
                       <input
-                        name="availDueDate"
-                        value={assignment.availDueDate}
+                        name="availUntilDate"
+                        value={assignment.availUntilDate}
                         onChange={handleValueChange}
                         type="date"
                         className="form-control"

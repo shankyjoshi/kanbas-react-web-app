@@ -3,10 +3,11 @@ import db from "../../Database";
 import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteAssignment } from "./assignmentsReducer";
+import { deleteAssignment, setAssignments } from "./assignmentsReducer";
 import ConfirmationModal from "./ConfirmationModal";
 import Projects from "./Projects";
-
+import { useEffect } from "react";
+import * as client from "./client";
 export const Assignments = () => {
   const dropdownOptions = [
     "Edit",
@@ -34,8 +35,16 @@ export const Assignments = () => {
 
   const dispatch = useDispatch();
   const handleDelete = (id) => {
-    dispatch(deleteAssignment(id));
+    client.deleteAssignment(id).then((status) => {
+      dispatch(deleteAssignment(id));
+    });
   };
+
+  useEffect(() => {
+    client.findAssignmentForCourse(courseId).then((assignments) => {
+      dispatch(setAssignments(assignments));
+    });
+  }, []);
   return (
     <div className="flex-fill">
       <div className="d-inline-flex">
