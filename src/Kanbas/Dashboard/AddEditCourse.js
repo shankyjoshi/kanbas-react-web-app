@@ -28,13 +28,12 @@ const AddEditCourse = () => {
 
   const handleSaveCourse = () => {
     if (currentCourse) {
-      updCourse(course);
+      updCourse(course).then((res) => navigate("/Kanbas/Dashboard"));
       dispatch(updateCourse(course));
     } else {
-      createCourse(course);
+      createCourse(course).then((res) => navigate("/Kanbas/Dashboard"));
       dispatch(addCourse(course));
     }
-    navigate("/Kanbas/Dashboard");
   };
   return (
     <div className="container ">
