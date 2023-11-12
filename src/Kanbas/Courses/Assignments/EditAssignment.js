@@ -40,13 +40,14 @@ const EditAssignment = () => {
     if (addFlag) {
       client.createAssignment(assignment).then((assignment) => {
         dispatch(addAssignment(assignment));
+        navigate(`/Kanbas/Courses/${courseId}/Assignments`);
       });
     } else {
       client.updateAssignment(assignment).then((assignment) => {
         dispatch(updateAssignment(assignment));
+        navigate(`/Kanbas/Courses/${courseId}/Assignments`);
       });
     }
-    navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
 
   const handleValueChange = (e) => {

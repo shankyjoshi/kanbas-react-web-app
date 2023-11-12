@@ -12,10 +12,7 @@ const assignmentsSlice = createSlice({
       state.assignments = action.payload;
     },
     addAssignment: (state, action) => {
-      const newAssignments = [
-        ...state.assignments,
-        { ...action.payload, _id: new Date().getTime().toString() },
-      ];
+      const newAssignments = [...state.assignments, { ...action.payload }];
       state.assignments = newAssignments;
     },
     deleteAssignment: (state, action) => {
