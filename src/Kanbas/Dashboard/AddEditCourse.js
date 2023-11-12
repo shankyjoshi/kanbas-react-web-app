@@ -15,6 +15,7 @@ const AddEditCourse = () => {
   );
 
   const defaultNewCourse = {
+    _id: new Date().getTime().toString(),
     name: "New Course",
     number: "New Number",
     startDate: "2023-09-10",
@@ -27,13 +28,11 @@ const AddEditCourse = () => {
 
   const handleSaveCourse = () => {
     if (currentCourse) {
-      updCourse(course).then((course) => {
-        dispatch(updateCourse(course));
-      });
+      updCourse(course);
+      dispatch(updateCourse(course));
     } else {
-      createCourse(course).then((course) => {
-        dispatch(addCourse(course));
-      });
+      createCourse(course);
+      dispatch(addCourse(course));
     }
     navigate("/Kanbas/Dashboard");
   };

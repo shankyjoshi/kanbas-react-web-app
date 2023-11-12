@@ -9,15 +9,15 @@ const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   useEffect(() => {
-    getAllCourses().then((courses) => {
-      dispatch(setCourses(courses));
+    dispatch(setCourses([]));
+    getAllCourses().then((cs) => {
+      dispatch(setCourses(cs));
     });
   }, []);
 
   const handleDelete = (courseId) => {
-    delCourse(courseId).then(() => {
-      dispatch(deleteCourse(courseId));
-    });
+    delCourse(courseId);
+    dispatch(deleteCourse(courseId));
   };
   return (
     <div className="d-flex flex-column flex-fill ms-4">

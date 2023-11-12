@@ -12,10 +12,7 @@ const coursesSlice = createSlice({
       state.courses = action.payload;
     },
     addCourse: (state, action) => {
-      const newCourses = [
-        ...state.courses,
-        { ...action.payload, _id: new Date().getTime().toString() },
-      ];
+      const newCourses = [...state.courses, action.payload];
       state.courses = newCourses;
     },
     deleteCourse: (state, action) => {
