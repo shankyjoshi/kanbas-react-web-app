@@ -210,28 +210,30 @@ function WorkingWithArrays() {
       />
       <a
         href={`${API}/${todo.id}/title/${todo.title}`}
-        className="btn btn-primary me-2"
+        className="btn btn-primary me-2 mb-4"
       >
         Update Title to {todo.title}
       </a>
-      <input
-        value={todo.completed}
-        onChange={(e) =>
-          setTodo({
-            ...todo,
-            completed: e.target.value,
-          })
-        }
-        className="form-control mb-2"
-        type="text"
-      />
-      <a
-        href={`${API}/${todo.id}/completed/${todo.completed}`}
-        className="btn btn-primary me-2"
-      >
-        Update completed to {todo.completed}
-      </a>
-
+      <div class="form-check">
+        <input
+          checked={todo.completed}
+          onChange={(e) =>
+            setTodo({
+              ...todo,
+              completed: e.target.checked,
+            })
+          }
+          className="form-check-input mb-2 "
+          type="checkbox"
+        />
+        Completed
+        <a
+          href={`${API}/${todo.id}/completed/${todo.completed}`}
+          className="btn btn-primary ms-2"
+        >
+          Update completed to {JSON.stringify(todo.completed)}
+        </a>
+      </div>
       <input
         value={todo.description}
         onChange={(e) =>

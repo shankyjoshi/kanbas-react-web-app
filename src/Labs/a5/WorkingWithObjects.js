@@ -93,7 +93,7 @@ function WorkingWithObjects() {
             }
             checked={assignment.completed}
             type="checkbox"
-            class="form-check-input"
+            className="form-check-input"
             id="flexCheckDefault"
           />
           <label class="form-check-label" for="flexCheckDefault">
