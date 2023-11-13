@@ -91,7 +91,7 @@ function WorkingWithObjects() {
             onChange={(e) =>
               setAssignment({ ...assignment, completed: e.target.checked })
             }
-            value={assignment.completed}
+            checked={assignment.completed}
             type="checkbox"
             class="form-check-input"
             id="flexCheckDefault"
