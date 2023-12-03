@@ -125,8 +125,11 @@ function UserTable() {
               <td>{user.firstName}</td>
               <td>{user.lastName}</td>
               <td>
-                <button className="btn btn-warning me-1">
-                  <BsPencil onClick={() => selectUser(user)} />
+                <button
+                  className="btn btn-warning me-1"
+                  onClick={() => selectUser(user)}
+                >
+                  <BsPencil />
                 </button>
               </td>
               <td>
