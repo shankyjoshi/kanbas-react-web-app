@@ -41,6 +41,7 @@ function UserTable() {
   });
   const createUser = async () => {
     try {
+      delete user._id;
       const newUser = await client.createUser(user);
       setUsers([newUser, ...users]);
     } catch (err) {
